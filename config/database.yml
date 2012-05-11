@@ -1,17 +1,17 @@
 development:
   adapter: mysql2
-  database: wedding-website-development
+  database: wedding-dev
   username: root
   password: root
 
 test:
   adapter: mysql2
-  database: wedding-website-test
+  database: wedding-test
   username: root
   password: root
 
 production:
   adapter: mysql2
-  database: matheeen_wedding
-  username: matheeen_root
-  password: "*WBiP=@-)EdV"
+  database: wedding
+  username: root
+  password: "WBiPEdV"
