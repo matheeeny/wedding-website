@@ -27,6 +27,8 @@ gem 'jquery-rails'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
+gem 'unicorn'
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 

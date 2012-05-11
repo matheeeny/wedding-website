@@ -139,7 +139,8 @@
                 "mysql-server" : [],
                 "mysql-devel"  : [],
                 "mysql-libs"   : [],
-                "git"		   : []
+                "git"		   : [],
+                "nginx"		   : []
               },
 
               "rubygems" : {
@@ -158,6 +159,18 @@
                   "FLUSH PRIVILEGES;\n"
                   ]]},
                 "mode"  : "000644",
+                "owner" : "root",
+                "group" : "root"
+              },	
+              "/tmp/wedding.conf" : { "Fn::Join" : ["", [
+                  ]]},
+                "mode"  : "000664",
+                "owner" : "root",
+                "group" : "root"
+              },
+			  "/tmp/nginx.conf" : { "Fn::Join" : ["", [
+                  ]]},
+                "mode"  : "000664",
                 "owner" : "root",
                 "group" : "root"
               }
@@ -198,11 +211,19 @@
           "    --access-key ",  { "Ref" : "HostKeys" },
           "    --secret-key ", {"Fn::GetAtt": ["HostKeys", "SecretAccessKey"]},
           "    --region ", { "Ref" : "AWS::Region" }, " || error_exit 'Failed to run cfn-init'\n",
+          
+          "mv /tmp/nginx.conf /etc/nginx/nginx.conf\n",
+          "mkdir /etc/nginx/sites-available/\n",
+          "mv /tmp/wedding.conf /etc/nginx/sites-available/wedding.conf\n",
+          "ln -s /etc/nginx/sites-available/wedding.conf /etc/nginx/sites-enabled/wedding.conf\n",
+          
+          "/etc/init.d/nginx restart\n", 
+          
 
           "# Setup MySQL root password and create a user\n",
           "mysqladmin -u root password '", { "Ref" : "DBRootPassword" }, "' || error_exit 'Failed to initialize root password'\n",
           "mysql -u root --password='", { "Ref" : "DBRootPassword" }, "' < /tmp/setup.mysql || error_exit 'Failed to create database user'\n",
-        
+        	
           "# All is well so signal success\n",
           "/opt/aws/bin/cfn-signal -e 0 -r \"Server is running\" '", { "Ref" : "WaitHandle" }, "'\n"
         ]]}}        
