@@ -32,6 +32,8 @@ set :unicorn_pid do
   "#{shared_path}/pids/unicorn.pid"
 end
 
+set :unicorn_rb, "#{applicationdir}/current/config/unicorn.rb"
+
 after 'deploy:update', 'rvm:install_rvm'
 after 'deploy:update', 'rvm:install_ruby'
 before "deploy:assets:precompile", "bundle:install"
@@ -53,7 +55,7 @@ end
 namespace :unicorn do
   desc "start unicorn server"
   task :start, :roles => :app do
-    run "cd #{current_path} && bundle exec unicorn -E #{rails_env} -D -P #{unicorn_pid}"
+    run "cd #{current_path} && bundle exec unicorn -E #{rails_env} -D -P #{unicorn_pid} -c #{unicorn_rb}" 
   end
 
   desc "stop unicorn server"
