@@ -138,7 +138,8 @@
                 "mysql"        : [],
                 "mysql-server" : [],
                 "mysql-devel"  : [],
-                "mysql-libs"   : []
+                "mysql-libs"   : [],
+                "git"		   : []
               },
 
               "rubygems" : {
@@ -201,7 +202,7 @@
           "# Setup MySQL root password and create a user\n",
           "mysqladmin -u root password '", { "Ref" : "DBRootPassword" }, "' || error_exit 'Failed to initialize root password'\n",
           "mysql -u root --password='", { "Ref" : "DBRootPassword" }, "' < /tmp/setup.mysql || error_exit 'Failed to create database user'\n",
-
+        
           "# All is well so signal success\n",
           "/opt/aws/bin/cfn-signal -e 0 -r \"Server is running\" '", { "Ref" : "WaitHandle" }, "'\n"
         ]]}}        
