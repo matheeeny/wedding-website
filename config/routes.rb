@@ -55,7 +55,6 @@ WeddingWebsite::Application.routes.draw do
   match '/registry' => 'home#registry'
   match '/rsvp' => 'home#rsvp'
   match '/contact' => 'home#contact'
-  match '/wedding_party' => 'home#wedding_party'
   match '/inbound_email' => 'home#inbound_email'
   match '/admin' => 'admin#index'
 
