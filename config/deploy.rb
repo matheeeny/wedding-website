@@ -55,7 +55,7 @@ end
 namespace :unicorn do
   desc "start unicorn server"
   task :start, :roles => :app do
-    run "cd #{current_path} && bundle exec unicorn -E #{rails_env} -D -P #{unicorn_pid} -c #{unicorn_rb}" 
+    run "cd #{current_path} && bundle exec unicorn -E #{rails_env} -D -P -c #{unicorn_rb}" 
   end
 
   desc "stop unicorn server"
