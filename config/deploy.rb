@@ -2,8 +2,8 @@ require "bundler/capistrano"
 require "rvm/capistrano"
 
 set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
-before 'deploy:setup', 'rvm:install_rvm'
-before 'deploy', 'rvm:install_ruby'
+after 'deploy:update', 'rvm:install_rvm'
+after 'deploy:update', 'rvm:install_ruby'
 
 set :user, 'ec2-user'  # Your hosting account's username
 set :domain, 'ec2-184-73-81-127.compute-1.amazonaws.com'  # Hosting servername where your account is located
