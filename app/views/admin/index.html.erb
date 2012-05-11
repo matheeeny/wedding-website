@@ -23,7 +23,6 @@
             <th>Last</th>
             <th>Attending</th>
             <th>Hotel</th>
-            <th>Shuttle</th>
         </tr>
 
         </thead>
@@ -37,7 +36,6 @@
                 <td><%= rsvp.last_name %></td>
                 <td><%= rsvp.attending %></td>
                 <td><%= rsvp.hotel_id ? Hotel.find(rsvp.hotel_id).name : "<not selected>" %></td>
-                <td><%= rsvp.using_shuttle? %></td>
             </tr>
         <% end %>
     </table>
