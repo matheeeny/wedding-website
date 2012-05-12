@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background-color: #414143;
+    background-color: #ffffff;
     padding-top: 60px;
 }
 
 body, a, label, ul, li {
-    color: #eeeeeb;
+    color: #000000;
     font-family: 'Fanwood Text', serif;
 }
 
@@ -17,25 +17,35 @@ a:hover {
   /*text-decoration: none;*/
 }
 
+.framing {
+  color: #5fd3bc;
+  font-family: 'Fanwood Text', serif;
+  font-size:144px;
+}
+
+.headline {
+    color: #fad605;
+    font-family: 'Fanwood Text', serif;
+    padding-bottom: 10px;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Fanwood Text', serif;
-  color: #f9c39e;
+  color: #4f4f4f;
+}
+
+.highlight {
+    color: #2ca089;
 }
 
 .hero-unit {
-  background-color: #494949;
+  background-color: #ffffff;
   text-align: center;
   padding: 15px;
 }
 
 .hero-unit img {
  padding-bottom: 15px;
-}
-
-.headline {
-    color: #eeeeeb;
-    font-family: 'Fanwood Text', serif;
-    padding-bottom: 10px;
 }
 
 .large {
@@ -48,9 +58,6 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'IM Fell French Canon', serif;
 }
 
-.highlight {
-    color: #f9c39e;
-}
 
 .container p, .container li {
     font-size: 11pt;
