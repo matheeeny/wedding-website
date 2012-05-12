@@ -4,7 +4,7 @@ require "rvm/capistrano"
 set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 
 set :user, 'ec2-user'  # Your hosting account's username
-set :domain, 'ec2-184-73-81-127.compute-1.amazonaws.com'  # Hosting servername where your account is located
+set :domain, 'ec2-50-16-117-33.compute-1.amazonaws.com'  # Hosting servername where your account is located
 set :project, 'wedding-website'  # Your application as its called in the repository
 set :application, 'andrewloveskristen.com'  # Your app's location (domain or subdomain)
 set :applicationdir, "/home/#{user}/#{project}"  # The location of your application on your hosting (my differ for each hosting provider)
@@ -34,8 +34,8 @@ end
 
 set :unicorn_rb, "#{applicationdir}/current/config/unicorn.rb"
 
-after 'deploy:update', 'rvm:install_rvm'
-after 'deploy:update', 'rvm:install_ruby'
+before 'deploy:cold', 'rvm:install_rvm'
+before 'deploy:cold', 'rvm:install_ruby'
 before "deploy:assets:precompile", "bundle:install"
 
 namespace :deploy do
