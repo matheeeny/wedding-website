@@ -154,6 +154,7 @@
             "files" : {
               "/tmp/setup.mysql" : {
                 "content" : { "Fn::Join" : ["", [
+                  "CREATE TABLE IF NOT EXISTS ", { "Ref" : "DBName" }, ";\n",
                   "CREATE USER '", { "Ref" : "DBUsername" }, "'@'localhost' IDENTIFIED BY '", { "Ref" : "DBPassword" }, "';\n",
                   "GRANT ALL ON ", { "Ref" : "DBName" }, ".* TO '", { "Ref" : "DBUsername" }, "'@'localhost';\n",
                   "FLUSH PRIVILEGES;\n"
@@ -165,7 +166,7 @@
               "/tmp/wedding.conf" : { 
               	"content" : { "Fn::Join" : ["", [
 	                "upstream unicorn {\n",
-					"  server unix:/tmp/shop.sock fail_timeout=0;\n",
+					"  server unix:/tmp/shop.socket fail_timeout=0;\n",
 					"}\n",
 					"\n",
 					"server {\n",
@@ -190,12 +191,6 @@
 					"\n",
 					"  location @rails {\n",
 					"    proxy_pass http://unicorn;\n",
-					"  }\n",
-					"\n",
-					"  location ~ ^/assets/ {\n",
-					"    gzip_static on;\n",
-					"    expires max;\n",
-					"    add_header Cache-Control public;\n",
 					"  }\n",
 					"\n",
 					"  location = /favicon.ico {\n",
