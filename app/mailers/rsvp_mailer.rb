@@ -7,7 +7,7 @@ class RsvpMailer < ActionMailer::Base
 
     subject_prefix = primary.attending? ? "Attending" : "Not Attending"
 
-    mail(:from => '"andrewloveskristen.com" <noreply@andrewloveskristen.com>', :to => 'andrew.j.mathen@gmail.com', :cc => 'kristenshunk@gmail.com', :subject => "New RSVP - #{subject_prefix} : #{primary.first_name} #{primary.last_name} + #{@guests.size}")
+    mail(:from => '"andrewloveskristen.com" <noreply@andrewloveskristen.com>', :to => 'andrew.j.matheny@gmail.com', :cc => 'kristenshunk@gmail.com', :subject => "New RSVP - #{subject_prefix} : #{primary.first_name} #{primary.last_name} + #{@guests.size}")
   end
 
 end
