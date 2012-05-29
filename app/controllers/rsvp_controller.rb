@@ -18,9 +18,9 @@ class RsvpController < ApplicationController
 
       RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
       success_message = if primary.attending?
-                          "We've created an RSVP for #{params["primary_title"]} #{params["primary_first_name"]} #{params["primary_last_name"]} and #{guests_message guests}. <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us at 304-282-9260."
+                          "We've created an RSVP for #{params["primary_title"]} #{params["primary_first_name"]} #{params["primary_last_name"]} and #{guests_message guests}. <br/> If you need to make any changes please <a href='/contact'>contact us</a> or call us at 304-745-7582."
                         else
-                          "We are sorry you can't make it.  <br/> If you change your mind please <a href='/contact'>contact us</a> or call us at 304-282-9260."
+                          "We are sorry you can't make it.  <br/> If you change your mind please <a href='/contact'>contact us</a> or call us at 304-745-7582."
                         end
       flash[:notice] = success_message
 

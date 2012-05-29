@@ -1,4 +1,4 @@
-require 'base64'
+require 'digest'
 
 class AdminController < ApplicationController
 
@@ -12,7 +12,7 @@ class AdminController < ApplicationController
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "lando" && password == Base64.decode64("bTAwbTAwZmFybQ==\n")
+      username == "lando" && Digest::MD5.hexdigest(password) == "f6a0df19c20f0a82988e559bed9b2cbb"
     end
   end
 
