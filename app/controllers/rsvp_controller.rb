@@ -12,8 +12,7 @@ class RsvpController < ApplicationController
                              :primary => true,
                              :phone => params["primary_phone"],
                              :email => params["primary_email"],
-                             :attending => params["attending"],
-                             :hotel_id => params["rsvp"]["hotel"]
+                             :attending => params["attending"]
       guests = create_guests params, primary.id
 
       RsvpMailer.rsvp_email(primary, guests, params["message"]).deliver
@@ -70,7 +69,6 @@ class RsvpController < ApplicationController
                              :last_name => params["#{guest_num}_guest_last_name"],
                              :primary => false,
                              :guest_of_id => primary_id,
-                             :hotel_id => params["rsvp"]["hotel"],
                              :attending => params["attending"]
         guests << guest
       end
