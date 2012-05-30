@@ -1,17 +1,23 @@
 development:
-  adapter: mysql2
-  database: wedding-dev
-  username: root
-  password: root
-
+  adapter: postgresql
+  encoding: unicode
+  database: wedding_development
+  pool: 5
+  username: amatheny
+  password: 
+  
 test:
-  adapter: mysql2
-  database: wedding-test
-  username: root
-  password: root
+  adapter: postgresql
+  encoding: unicode
+  database: wedding_test
+  pool: 5
+  username: amatheny
+  password: 
 
 production:
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   database: wedding
-  username: root
-  password: "WBiPEdV"
+  pool: 5
+  username: amatheny
+  password: 

@@ -32,10 +32,9 @@ gem 'unicorn'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-gem 'mysql2'
+gem 'pg'
 
 group :production do
-  gem 'pg'
   gem 'execjs'
   gem 'therubyracer'
 end
