@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-gem 'mysql2'
-
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -32,7 +30,10 @@ gem 'unicorn'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'mysql2'
+
 group :production do
+  gem 'pg'
   gem 'execjs'
   gem 'therubyracer'
 end
