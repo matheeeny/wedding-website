@@ -29,6 +29,7 @@
         <div class="container">
             <a class="brand <%= is_active?("home#index") %>" href="/"><span class="headline">kristen <span class="highlight">&</span> andrew</span></a>
             <ul class="nav">
+                <li class="<%= is_active?("home#venue") %>"><%= link_to "Venue", :controller => "home", :action => "venue" %></li>
                 <li class="<%= is_active?("home#registry") %>"><%= link_to "Registry", "https://secure.wanderable.com/hm/kristenlovesandrew", :target => "_blank" %></li>
                 <li class="<%= is_active?("home#photos") %>"><%= link_to "Photos", :controller => "home", :action => "photos" %></li>
                 <li class="<%= is_active?("rsvp#index") %>"><%= link_to "RSVP", :controller => "rsvp", :action => "index" %></li>

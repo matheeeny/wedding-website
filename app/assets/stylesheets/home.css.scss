@@ -8,7 +8,7 @@ body {
 }
 
 body, a, label, ul, li {
-    color: #000000;
+    color: #000;
     font-family: 'Fanwood Text', serif;
 }
 
@@ -23,7 +23,7 @@ a:hover {
   font-size:144px;
 }
 
-.headline {
+.headline, .headline * {
     color: #fad605;
     font-family: 'Fanwood Text', serif;
     padding-bottom: 10px;
