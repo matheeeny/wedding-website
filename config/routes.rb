@@ -55,6 +55,7 @@ WeddingWebsite::Application.routes.draw do
   match '/contact' => 'home#contact'
   match '/inbound_email' => 'home#inbound_email'
   match '/admin' => 'admin#index'
+  match '/photos' => 'home#photos'
 
   # See how all your routes lay out with "rake routes"
 
