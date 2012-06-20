@@ -50,9 +50,7 @@ WeddingWebsite::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
-  match '/directions' => 'home#directions'
-  match '/lodging' => 'home#lodging'
-  match '/registry' => 'home#registry'
+  match '/venue' => 'home#venue'
   match '/rsvp' => 'home#rsvp'
   match '/contact' => 'home#contact'
   match '/inbound_email' => 'home#inbound_email'

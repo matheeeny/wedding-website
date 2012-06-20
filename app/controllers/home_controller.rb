@@ -1,12 +1,5 @@
 class HomeController < ApplicationController
 
-  def registry
-    @target_url = 'http://bit.ly/george_ryan_registry_1'
-    @macys_url = 'http://bit.ly/george_ryan_registry_2'
-    @pottery_barn_url = 'http://bit.ly/george_ryan_registry_3'
-    @amazon_url = 'http://amzn.to/george_ryan_registry'
-  end
-
   def inbound_email
     errors = validate_inbound_email params
     respond_to do |format|
