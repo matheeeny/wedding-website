@@ -21,10 +21,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-#group :production do
-#  gem 'execjs'
-#  gem 'therubyracer'
-#end
+group :production do
+  gem 'newrelic_rpm'
+end
 
 group :test do
   # Pretty printed test output
