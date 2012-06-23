@@ -24,7 +24,7 @@ class RsvpController < ApplicationController
       flash[:notice] = success_message
 
     else
-      flash[:error] = 'There was an error submitting your RSVP.  All fields are required, except message.  Please try again.'
+      flash[:error] = 'There was an error submitting your RSVP.  Please try again.'
       #TODO - Airbrake
     end
 
@@ -43,11 +43,8 @@ class RsvpController < ApplicationController
   end
 
   def validate_primary params
-    result = validate("primary", params)
     if "yes" == params["attending"]
-      result = result &&
-          !params["primary_email"].empty? &&
-          !params["primary_phone"].empty?
+      result = validate("primary", params)
     end
 
     result
@@ -55,8 +52,7 @@ class RsvpController < ApplicationController
 
   def validate prefix="primary", params
     logger.info "validating #{prefix}"
-    !params["#{prefix}_title"].empty? &&
-        !params["#{prefix}_first_name"].empty? &&
+    !params["#{prefix}_first_name"].empty? &&
         !params["#{prefix}_last_name"].empty?
   end
 
