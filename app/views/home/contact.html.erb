@@ -9,22 +9,22 @@
     <%= form_tag("/inbound_email", :class => "") do %>
         <div class="clearfix">
             <%= label_tag(:email, "Email Address", :class => 'span5') %>
-            <%= email_field_tag(:email, nil, :class => 'input span7', :placeholder => 'fauncy@billups.com') %>
+            <%= email_field_tag(:email, nil, :class => 'input span7', :placeholder => 'someone@emailtown.com') %>
         </div>
 
         <div class="clearfix">
             <%= label_tag(:name, "Your Name", :class => 'span5') %>
-            <%= text_field_tag(:name, nil, :class => 'input span7', :placeholder => 'Fauncy Billups') %>
+            <%= text_field_tag(:name, nil, :class => 'input span7', :placeholder => 'Guesty McGuesterson') %>
         </div>
 
         <div class="clearfix">
             <%= label_tag(:subject, "Subject", :class => 'span5') %>
-            <%= text_field_tag(:subject, nil, :class => 'input span7', :placeholder => 'OMG!') %>
+            <%= text_field_tag(:subject, nil, :class => 'input span7', :placeholder => 'Heyyy you guyyysss!') %>
         </div>
 
         <div class="clearfix">
             <%= label_tag(:message, "Message", :class => 'span5') %>
-            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "I can't wait to moonwalk at your wedding!", :size => '20x10') %>
+            <%= text_area_tag(:message, nil, :class => 'input span7', :placeholder => "What should I wear to your wedding?  Also... will there be llamas?", :size => '20x10') %>
         </div>
 
         <div class="row">
