@@ -24,7 +24,7 @@ class RsvpController < ApplicationController
       flash[:notice] = success_message
 
     else
-      flash[:error] = 'There was an error submitting your RSVP.  Please try again.'
+      flash[:error] = 'There was an error submitting your RSVP.  Please try again.  All fields are required except phone, email, and message.'
       #TODO - Airbrake
     end
 
