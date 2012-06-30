@@ -11,7 +11,7 @@ WeddingWebsite::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #resources :rsvp
+  resources :rsvp
 
   # Sample resource route with options:
   #   resources :products do
@@ -51,7 +51,7 @@ WeddingWebsite::Application.routes.draw do
   root :to => 'home#index'
 
   match '/venue' => 'home#venue'
-  match '/rsvp' => 'home#rsvpdown'
+  match '/rsvp' => 'home#rsvp'
   match '/contact' => 'home#contact'
   match '/inbound_email' => 'home#inbound_email'
   match '/admin' => 'admin#index'
