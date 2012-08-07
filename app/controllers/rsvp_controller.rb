@@ -43,11 +43,7 @@ class RsvpController < ApplicationController
   end
 
   def validate_primary params
-    if "yes" == params["attending"]
-      result = validate("primary", params)
-    end
-
-    result
+    result = validate("primary", params)
   end
 
   def validate prefix="primary", params
